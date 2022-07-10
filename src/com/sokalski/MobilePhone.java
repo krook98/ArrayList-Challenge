@@ -56,6 +56,10 @@ public class MobilePhone {
             System.out.println(oldContact.getName() + " not found");
             return false;
         }
+        else if(findContact(newContact.getName()) != -1) {
+            System.out.println("Contact with name " + newContact.getName() + " already exists. Update failed.");
+            return false;
+        }
 
         this.myContacts.set(position, newContact);
         System.out.println(oldContact.getName() + " replaced with " + newContact.getName());
